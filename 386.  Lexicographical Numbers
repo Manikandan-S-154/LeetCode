@@ -1,0 +1,19 @@
+class Solution {
+    public List<Integer> lexicalOrder(int n) {
+        List<Integer> a=new ArrayList<>();
+        for(int i=1;i<=9;i++){
+            f(i,n,a);
+        }
+        return a;
+    }
+    public void f(int c,int n,List a){
+        if(c>n){
+            return;
+        }
+        a.add(c);
+        for(int i=0;i<=9;i++){
+            f(c*10+i,n,a);
+        }
+        
+    }
+}
